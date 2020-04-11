@@ -1,18 +1,18 @@
-from jugador import Jugador
+from Model.jugador import Jugador
 import shelve
-from menu import menu
-from tablero import *
-from juego import juego
+from View.menu import menu
+from View.tablero import *
+from Controller.juego import juego
 datos=shelve.open("Datos.dat")
 opcion=0
 while(int(opcion)!=1 and int(opcion)!=2):
     print ("Opcion invalida\nPor favor seleccione una opcion valida:\n"
-           
+
            "1.- Registar Jugador\n"
            "2.-Iniciar Sesion\n")
     opcion = input("==> ")
 jugador=menu(opcion,datos)
-    
+
 
 
 p1=datos[jugador]
@@ -28,9 +28,9 @@ while(int(sele)<=3):
     sele= input("Escribe tu seleccion: \n")
 
     if(sele=="1"):
-    
+
         datos[jugador]=juego(p1)
-    
+
     if (sele=="2"):
     #abrir estadisticas
 
@@ -50,5 +50,3 @@ while(int(sele)<=3):
     if(sele=="4" or sele=="salir"):
         print("Adios "+jugador+" espero tenerte pronto por aqui de nuevo")
         break
-    
-

@@ -1,8 +1,8 @@
-from jugador import Jugador
+from Model.jugador import Jugador
 #funcion que llama al menu para meter usuario
 
 def menu(opcion,datos):#recibe como parametros la opcion deseada y el archivo donde vienen las llaves
-    
+
     if opcion == "1":
         jugador= input("Dame el usuario\n")
         while(jugador in datos):#Siempre que ya este el juegador inscrito te pedira que ingreses otro
@@ -18,18 +18,18 @@ def menu(opcion,datos):#recibe como parametros la opcion deseada y el archivo do
 
             contrasena = input("Dame la clave\n")
             confirmacion = input("Repite la clave\n")
-    
+
         puntuacion = 0
         partidas = 0
         ganadas = 0
         p1 = Jugador(jugador,contrasena,confirmacion,puntuacion,partidas,ganadas)
-        llave = p1.getUsuario()    
+        llave = p1.getUsuario()
         datos[llave] = p1
-        
+
         print ('Usuario agregado con exito\n\n'+u"\U0001F60A")
 
         return p1.getUsuario()
-      
+
     elif(opcion == "2"):#opcion para hacer login
 
         jugador = input("Dame el usuario\n")
@@ -48,9 +48,9 @@ def menu(opcion,datos):#recibe como parametros la opcion deseada y el archivo do
 
 
         print("Bienvenido :"+jugador+"\n")#El jugador es bienvenido
-        
+
         p1=datos[jugador]
-        
+
         return p1.getUsuario()
 
     return jugador
