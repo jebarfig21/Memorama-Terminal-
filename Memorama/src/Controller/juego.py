@@ -1,6 +1,6 @@
 from Model.jugador import Jugador
 import shelve
-from View.menu import menu
+#from View.Menu import *
 from View.tablero import *
 
 #Funcion que ejecuta el juego memorama, usa las funciones de tablero apra crear tablero y modificarlo conforme avanza el juego
